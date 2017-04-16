@@ -1,0 +1,2 @@
+# QtDictionary
+Smart dictionary program
