@@ -23,14 +23,13 @@ class Dictionary : public QObject
     Q_OBJECT
 public:
     explicit Dictionary(QObject *parent = 0);
+    Q_INVOKABLE void readWordsfromCSV(QString filepath);
 
 signals:
 
 public slots:
 
 private:
-
-    void readWordsfromCSV(QString filepath);
     words::wordPair wpair_s;
     QVector<words::wordPair> dictionary_v;
 };

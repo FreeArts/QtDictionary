@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.3
 Item {
     width: 640
     height: 480
+    property alias textInput: textInput
     property alias welcome_label: welcome_label
     property alias button: button
 
@@ -20,9 +21,15 @@ Item {
     Label {
         id: welcome_label
         x: 255
-        y: 138
+        y: 88
         width: 102
         height: 23
         text: qsTr("Label")
+    }
+
+    TextField {
+        id: textInput
+        x: 206
+        y: 132
     }
 }

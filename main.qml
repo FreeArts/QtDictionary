@@ -6,17 +6,16 @@ ApplicationWindow {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
+    title: qsTr("QtDictionary")
 
     SwipeView {
         id: view
         anchors.fill: parent
 
-        MainPage {
-            //id: th
+        Item {
         }
 
-        Item {
+        MainPage {
             id: secondPage
         }
         Item {
