@@ -5,31 +5,32 @@ import QtQuick.Layouts 1.3
 Item {
     width: 640
     height: 480
-    property alias textInput: textInput
-    property alias welcome_label: welcome_label
-    property alias button: button
+    property alias askedWordLabel: askedWordLabel
+    property alias okButton: okButton
+    property alias answerInput: answerInput
 
     Button {
-        id: button
-        x: 250
-        y: 201
+        id: okButton
+        x: 265
+        y: 192
         width: 111
         height: 38
         text: qsTr("Button")
     }
 
     Label {
-        id: welcome_label
-        x: 255
-        y: 88
+        id: askedWordLabel
+        x: 269
+        y: 79
         width: 102
         height: 23
-        text: qsTr("Label")
+        text: "?"
+        horizontalAlignment: Text.AlignHCenter
     }
 
     TextField {
-        id: textInput
-        x: 206
-        y: 132
+        id: answerInput
+        x: 221
+        y: 121
     }
 }

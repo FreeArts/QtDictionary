@@ -12,7 +12,7 @@ ApplicationWindow {
         id: view
         anchors.fill: parent
 
-        Item {
+        WelcomePage {
         }
 
         MainPage {

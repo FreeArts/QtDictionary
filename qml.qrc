@@ -1,8 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>qtquickcontrols2.conf</file>
         <file>MainPage.qml</file>
         <file>MainPageForm.ui.qml</file>
+        <file>WelcomePage.qml</file>
+        <file>WelcomePageForm.ui.qml</file>
     </qresource>
 </RCC>
