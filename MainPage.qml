@@ -5,11 +5,10 @@ MainPageForm {
     property int l_counter: 0
 
     okButton.onClicked: {
-        //console.log(QtDictionary.secondLangListBuffer)
-        //askedWordLabel.text = QtDictionary.secondLangListBuffer[l_counter]
-        //l_counter++
-        //console.log(QtDictionary.secondLangListBuffer.length)
 
+        askedWordLabel.text = QtDictionary.firstLangListBuffer[l_counter]
+        l_counter++
+        console.log(QtDictionary.firstLangListBuffer.length)
 }
     answerInput.onAccepted:
     {
@@ -21,7 +20,6 @@ MainPageForm {
         //textInput.text = "alma"
         //textInput.text.toString()
         //console.log(b)
-
     }
 
 }

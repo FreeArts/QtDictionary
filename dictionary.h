@@ -9,9 +9,6 @@
 #include <QVector>
 #include <QVariantList>
 
-//Q_INVOKABLE QVariantList getFirstLangBuffer();
-//Q_INVOKABLE QVariantList getSecondLangBuffer();
-
 namespace words
 {
     struct wordPair
@@ -21,12 +18,10 @@ namespace words
     };
 }
 
-
 class Dictionary : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QVariantList firstLangListBuffer MEMBER firstLangListBuffer_v NOTIFY firstLangListBufferChange)
-    Q_PROPERTY(QVariantList secondLangListBuffer READ secondLangListBufferRead WRITE setSecondLangListBuffer NOTIFY secondLangListBufferChanged)
+    Q_PROPERTY(QVariantList firstLangListBuffer MEMBER m_firstLangListBuffer_v NOTIFY firstLangListBufferChange)
 
 public:
 
@@ -34,28 +29,18 @@ public:
     Q_INVOKABLE void readWordsfromCSV(QString filepath);
     void readFromDictionaryToBuffer(const QVector<words::wordPair> &l_dictionary_vr);
 
-    QVariantList secondLangListBufferRead() const
-    {return secondLangListBuffer_v;}
-
-    void setSecondLangListBuffer(QVariantList secondLangListBuffer)
-    {
-        secondLangListBuffer_v = secondLangListBuffer;
-        emit secondLangListBufferChanged(secondLangListBuffer);
-    }
-
 signals:
 
     void firstLangListBufferChange();
-    void secondLangListBufferChanged(QVariantList);
 
 public slots:
 
 private:
-    words::wordPair wpair_s;
-    QVector<words::wordPair> dictionary_v;
+    words::wordPair m_wpair_s;
+    QVector<words::wordPair> m_dictionary_v;
 
-    QVariantList firstLangListBuffer_v;
-    QVariantList secondLangListBuffer_v;
+    QVariantList m_firstLangListBuffer_v;
+    QVariantList m_secondLangListBuffer_v;
 };
 
 #endif // DICTIONARY_H

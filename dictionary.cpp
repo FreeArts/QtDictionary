@@ -26,17 +26,17 @@ void Dictionary::readWordsfromCSV(QString l_filepath)
             l_wordListLang1.append(l_line.split(',').first());
             l_wordListLang2.append(l_line.split(',').last());
 
-            wpair_s.firstLang = l_wordListLang1.back();
-            wpair_s.firstLang.toLower();
+            m_wpair_s.firstLang = l_wordListLang1.back();
+            m_wpair_s.firstLang.toLower();
 
-            wpair_s.secondLang = l_wordListLang2.back();
-            wpair_s.secondLang.toLower();
+            m_wpair_s.secondLang = l_wordListLang2.back();
+            m_wpair_s.secondLang.toLower();
 
-            dictionary_v.push_back(wpair_s);
+            m_dictionary_v.push_back(m_wpair_s);
         }
 
         qDebug() << "ready load";
-        readFromDictionaryToBuffer(dictionary_v);
+        readFromDictionaryToBuffer(m_dictionary_v);
 }
 
 void Dictionary::readFromDictionaryToBuffer(const QVector<words::wordPair> &l_dictionary_vr)
@@ -44,10 +44,9 @@ void Dictionary::readFromDictionaryToBuffer(const QVector<words::wordPair> &l_di
 
     for(int loopCounter = 0; loopCounter <= l_dictionary_vr.size()-1;loopCounter++)
     {
-        firstLangListBuffer_v << l_dictionary_vr.at(loopCounter).firstLang;
-        secondLangListBuffer_v << l_dictionary_vr.at(loopCounter).secondLang;
+        m_firstLangListBuffer_v << l_dictionary_vr.at(loopCounter).firstLang;
+        m_secondLangListBuffer_v << l_dictionary_vr.at(loopCounter).secondLang;
     }
 
     qDebug() << "ready copy";
-
 }

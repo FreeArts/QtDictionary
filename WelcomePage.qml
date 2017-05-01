@@ -17,7 +17,7 @@ WelcomePageForm
             QtDictionary.readWordsfromCSV(fileDialogCSV.fileUrl)
         }
         onRejected: {
-            //onsole.log("Canceled")
+            //console.log("Canceled")
         }
         Component.onCompleted: visible = false
     }
