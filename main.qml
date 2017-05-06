@@ -4,23 +4,27 @@ import QtQuick.Layouts 1.0
 
 ApplicationWindow {
     visible: true
-    width: 640
-    height: 480
+    width: 470
+    height: 570
     title: qsTr("QtDictionary")
+
+    property int g_counterMAX_i: 0
 
     SwipeView {
         id: view
         anchors.fill: parent
+        enabled: true
 
         WelcomePage {
+            id:firstPage
         }
 
         MainPage {
             id: secondPage
         }
-        Item {
+        /*Item {
             id: thirdPage
-        }
+        }*/
     }
 
     PageIndicator {

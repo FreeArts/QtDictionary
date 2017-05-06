@@ -15,6 +15,9 @@ WelcomePageForm
         folder: shortcuts.home
         onAccepted: {
             QtDictionary.readWordsfromCSV(fileDialogCSV.fileUrl)
+            secondPage.enabled = true
+            secondPage.askedWordLabel.text = QtDictionary.secondLangListBuffer[0]
+            g_counterMAX_i = QtDictionary.DictionaryItemNumber
         }
         onRejected: {
             //console.log("Canceled")

@@ -35,13 +35,27 @@ void Dictionary::readWordsfromCSV(QString l_filepath)
             m_dictionary_v.push_back(m_wpair_s);
         }
 
+        m_IsDictionaryEven_b = IsDictionaryLenghtEvenNumber(m_dictionary_v);
+        m_DictionaryItemNumber_ui = m_dictionary_v.length()-1;
         qDebug() << "ready load";
         readFromDictionaryToBuffer(m_dictionary_v);
 }
 
+bool Dictionary::IsDictionaryLenghtEvenNumber(const QVector<words::wordPair> &l_dictionary_vr) const
+{
+    if(l_dictionary_vr.length() % 2 == 0)
+    {
+        return true;
+    }
+
+    else
+    {
+        return false;
+    }
+}
+
 void Dictionary::readFromDictionaryToBuffer(const QVector<words::wordPair> &l_dictionary_vr)
 {
-
     for(int loopCounter = 0; loopCounter <= l_dictionary_vr.size()-1;loopCounter++)
     {
         m_firstLangListBuffer_v << l_dictionary_vr.at(loopCounter).firstLang;
