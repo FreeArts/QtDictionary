@@ -6,6 +6,26 @@ MainPageForm {
     enabled: false
     property int  g_counter_i: 0
 
+    prevWord.onClicked: {
+
+        if(g_counter_i !== 0)
+        {
+            g_counter_i--;
+
+            askedWordLabel.text = QtDictionary.secondLangListBuffer[g_counter_i]
+            answerInput.clear()
+            hintLabel.text = "hint"
+        }
+}
+
+    nextWord.onClicked: {
+        g_counter_i++
+
+        askedWordLabel.text = QtDictionary.secondLangListBuffer[g_counter_i]
+        answerInput.clear()
+        hintLabel.text = "hint"
+}
+
     mouseArea.onClicked: {
         hintLabel.text = QtDictionary.firstLangListBuffer[g_counter_i]
 }

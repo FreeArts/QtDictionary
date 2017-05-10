@@ -4,8 +4,10 @@ import QtQuick.Layouts 1.0
 
 Item {
     id: item1
-    width: 470
+    width: 450
     height: 570
+    property alias prevWord: prevWord
+    property alias nextWord: nextWord
     property alias mouseArea: mouseArea
     property alias hintLabel: hintLabel
     property alias allWordsButton: allWordsButton
@@ -22,8 +24,8 @@ Item {
         width: 69
         height: 26
         text: qsTr("Hint")
-        anchors.verticalCenterOffset: -99
-        anchors.horizontalCenterOffset: 158
+        anchors.verticalCenterOffset: 48
+        anchors.horizontalCenterOffset: 2
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
         verticalAlignment: Text.AlignVCenter
@@ -36,38 +38,23 @@ Item {
         y: 177
         width: 70
         height: 26
-        anchors.horizontalCenterOffset: 158
+        anchors.horizontalCenterOffset: 2
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenterOffset: -99
+        anchors.verticalCenterOffset: 48
         anchors.verticalCenter: parent.verticalCenter
     }
 
-    RowLayout {
-        x: 46
-        y: 265
-        anchors.verticalCenter: parent.verticalCenter
+    Button {
+        id: allWordsButton
+        x: 169
+        y: 287
+        text: qsTr("All Words")
+        anchors.verticalCenterOffset: 0
+        anchors.horizontalCenterOffset: 1
         anchors.horizontalCenter: parent.horizontalCenter
-
-        Button {
-            id: firstHalfButton
-            text: qsTr("Words first Half")
-            Layout.preferredHeight: 40
-            Layout.preferredWidth: 127
-        }
-
-        Button {
-            id: allWordsButton
-            text: qsTr("All Words")
-            Layout.preferredHeight: 40
-            Layout.preferredWidth: 112
-        }
-
-        Button {
-            id: secondHalfButton
-            text: qsTr("Words Second Half")
-            Layout.preferredHeight: 40
-            Layout.preferredWidth: 130
-        }
+        anchors.verticalCenter: parent.verticalCenter
+        Layout.preferredHeight: 40
+        Layout.preferredWidth: 112
     }
 
     ColumnLayout {
@@ -75,8 +62,8 @@ Item {
         y: 53
         width: 202
         height: 165
-        anchors.verticalCenterOffset: -151
-        anchors.horizontalCenterOffset: 0
+        anchors.verticalCenterOffset: -189
+        anchors.horizontalCenterOffset: 1
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
 
@@ -105,5 +92,62 @@ Item {
             Layout.preferredHeight: 38
             Layout.preferredWidth: 111
         }
+    }
+
+    RowLayout {
+        x: 78
+        y: 235
+        width: 324
+        height: 43
+        anchors.verticalCenterOffset: -59
+        anchors.horizontalCenterOffset: 1
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        spacing: 64.3
+        visible: true
+        clip: false
+
+        Button {
+            id: firstHalfButton
+            text: qsTr("Words first Half")
+            padding: 3
+            Layout.minimumWidth: 0
+            Layout.fillHeight: true
+            Layout.fillWidth: false
+            Layout.preferredHeight: 40
+            Layout.preferredWidth: 127
+        }
+
+        Button {
+            id: secondHalfButton
+            text: qsTr("Words Second Half")
+            Layout.fillHeight: true
+            Layout.rowSpan: 1
+            Layout.fillWidth: false
+            Layout.preferredHeight: 40
+            Layout.preferredWidth: 130
+        }
+    }
+
+    Button {
+        id: nextWord
+        x: 287
+        y: 439
+        text: qsTr("next")
+        anchors.verticalCenterOffset: 174
+        anchors.horizontalCenterOffset: 112
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+    }
+
+    Button {
+        id: prevWord
+        x: 63
+        y: 439
+        text: qsTr("prev")
+        anchors.verticalCenterOffset: 174
+        anchors.horizontalCenterOffset: -112
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
     }
 }

@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.0
 
 ApplicationWindow {
     visible: true
-    width: 470
+    width: 450
     height: 570
     title: qsTr("QtDictionary")
 
@@ -15,16 +15,16 @@ ApplicationWindow {
         anchors.fill: parent
         enabled: true
 
-        WelcomePage {
-            id:firstPage
-        }
+            WelcomePage {
+                id:firstPage
+            }
 
-        MainPage {
-            id: secondPage
-        }
-        /*Item {
-            id: thirdPage
-        }*/
+            MainPage {
+                id: secondPage
+            }
+            /*Item {
+                id: thirdPage
+            }*/
     }
 
     PageIndicator {
@@ -34,6 +34,6 @@ ApplicationWindow {
         currentIndex: view.currentIndex
 
         anchors.bottom: view.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenter: parent.horizontalCenter 
     }
 }

@@ -3,25 +3,24 @@ import QtQuick.Dialogs 1.2
 
 WelcomePageForm
 {
-    loadCSVbutton.onClicked:
+    searchCSVbutton.onClicked:
     {
-        fileDialogCSV.visible = true
+        secondPage.g_counter_i = 0
+        secondPage.enabled = false
+        secondPage.askedWordLabel.text = "?"
+
+        QtDictionary.androidFileManager()
     }
 
-    FileDialog
+    loadCSVbutton.onClicked:
     {
-        id: fileDialogCSV
-        title: "Please choose your csv file"
-        folder: shortcuts.home
-        onAccepted: {
-            QtDictionary.readWordsfromCSV(fileDialogCSV.fileUrl)
-            secondPage.enabled = true
-            secondPage.askedWordLabel.text = QtDictionary.secondLangListBuffer[0]
-            g_counterMAX_i = QtDictionary.DictionaryItemNumber
-        }
-        onRejected: {
-            //console.log("Canceled")
-        }
-        Component.onCompleted: visible = false
+        initState()
+    }
+
+    function initState()
+    {
+        secondPage.enabled = true
+        secondPage.askedWordLabel.text = QtDictionary.secondLangListBuffer[0]
+        g_counterMAX_i = QtDictionary.DictionaryItemNumber
     }
 }
