@@ -8,6 +8,7 @@ WelcomePageForm
         secondPage.g_counter_i = 0
         secondPage.enabled = false
         secondPage.askedWordLabel.text = "?"
+        secondPage.currentWordNumberLabel.text = 1
 
         QtDictionary.androidFileManager()
     }
@@ -22,5 +23,6 @@ WelcomePageForm
         secondPage.enabled = true
         secondPage.askedWordLabel.text = QtDictionary.secondLangListBuffer[0]
         g_counterMAX_i = QtDictionary.DictionaryItemNumber
+        secondPage.maxWordsLabel.text = g_counterMAX_i
     }
 }

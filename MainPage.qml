@@ -11,19 +11,13 @@ MainPageForm {
         if(g_counter_i !== 0)
         {
             g_counter_i--;
-
-            askedWordLabel.text = QtDictionary.secondLangListBuffer[g_counter_i]
-            answerInput.clear()
-            hintLabel.text = "hint"
+            refreshAskedLabel()
         }
 }
 
     nextWord.onClicked: {
         g_counter_i++
-
-        askedWordLabel.text = QtDictionary.secondLangListBuffer[g_counter_i]
-        answerInput.clear()
-        hintLabel.text = "hint"
+        refreshAskedLabel()
 }
 
     mouseArea.onClicked: {
@@ -106,5 +100,6 @@ MainPageForm {
         askedWordLabel.text = QtDictionary.secondLangListBuffer[g_counter_i]
         answerInput.clear()
         hintLabel.text = "hint"
+        currentWordNumberLabel.text = g_counter_i + 1
     }
 }

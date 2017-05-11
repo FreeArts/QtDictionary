@@ -6,6 +6,8 @@ Item {
     id: item1
     width: 450
     height: 570
+    property alias maxWordsLabel: maxWordsLabel
+    property alias currentWordNumberLabel: currentWordNumberLabel
     property alias prevWord: prevWord
     property alias nextWord: nextWord
     property alias mouseArea: mouseArea
@@ -149,5 +151,49 @@ Item {
         anchors.horizontalCenterOffset: -112
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
+    }
+
+    Label {
+        id: divideLabel
+        x: 220
+        y: 519
+        width: 15
+        height: 21
+        text: qsTr("/")
+        anchors.verticalCenterOffset: 244
+        anchors.horizontalCenterOffset: 3
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+    }
+
+    Label {
+        id: maxWordsLabel
+        x: 241
+        y: 522
+        width: 44
+        height: 15
+        anchors.verticalCenterOffset: 244
+        anchors.horizontalCenterOffset: 29
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+    }
+
+    Label {
+        id: currentWordNumberLabel
+        x: 167
+        y: 521
+        width: 47
+        height: 16
+        text: qsTr("1")
+        anchors.verticalCenterOffset: 243
+        anchors.horizontalCenterOffset: -25
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.verticalCenter: parent.verticalCenter
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
     }
 }
